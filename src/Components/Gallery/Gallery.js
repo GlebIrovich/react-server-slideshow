@@ -9,6 +9,13 @@ export default class Gallery extends Component {
     this.props.hideLightbox();
   }
   renderGallery(){
+    //init generator
+    function* slideNum(){
+      let index = 1;
+      while(true)
+        yield index++;
+    }
+    const gen = slideNum();
     const unit = this.props.data[this.props.currentChapter]
     return unit.subchaptersTitles.map((title, index) => {
       return (
@@ -17,8 +24,8 @@ export default class Gallery extends Component {
               <p style={{margin:0, marginBottom: 8 , fontWeight: 'bold', color: 'white', fontSize: '13pt'}}>{title}</p>
           </div>
           {
-            unit.subchaptersSlides[index].map((slide) => {
-              const urlHash = `#slide${slide.match(/.*\/(\d+)./)[1]}`;
+            unit.subchaptersSlides[index].map((slide, number) => {
+              const urlHash = `#slide${gen.next().value}`;
               return (
                 <div className="col-lg-3 col-md-4 col-xs-6 thumb" key={urlHash}>
                     <a className="thumbnail" href={urlHash} onClick={this.handleImageClick}>
@@ -44,11 +51,3 @@ export default class Gallery extends Component {
     )
   }
 }
-// <div className="col-lg-12">
-//     <p style={{margin:0, marginBottom: 8 , fontWeight: 'bold', color: 'white', fontSize: '13pt'}}>SUBCHAPTER</p>
-// </div>
-// <div className="col-lg-3 col-md-4 col-xs-6 thumb">
-//     <a className="thumbnail" href="#slide1" onClick={this.handleImageClick}>
-//       <img className="img-responsive"/>
-//     </a>
-// </div>

@@ -40,9 +40,18 @@ let dataMain = {
         let slides = fs.readdirSync(`${Root}/${dataMain.units[i].unitPath}`).filter(function(name){
             return name[0] !== "." && !name.includes('details'); })
         // sort slides
-        dataMain.units[i].slides = slides.sort(function(a, b) {
-          return a.match(/\d+/)[0] - b.match(/\d+/)[0];
-        });
+
+        try{
+          dataMain.units[i].slides = slides.sort(function(a, b) {
+            return a.match(/\d+/)[0] - b.match(/\d+/)[0];
+          });
+        } catch(e){
+          console.log(`SLIDES IN FOLDER /${dataMain.units[i].unitPath} WERE NOT SORTED. CHECK MANUAL FOR PROPER NAMING.
+            use digits in the name to order your slides.
+            Slides in the final version will be unordered.`);
+          dataMain.units[i].slides = slides;
+        }
+
         dataMain.units[i].slidesPaths = slides.map(slide => {
             return dataMain.units[i].unitPath + slide;
         });
@@ -83,14 +92,17 @@ let dataMain = {
         }
     }
     // sort units based on folder name
-    dataMain.units.sort(function(a, b) {
-      return a.folder.match(/\d+/)[0] - b.folder.match(/\d+/)[0];
-    });
-    // 5) store DB
-    // fs.writeFile(DB, JSON.stringify(dataMain, null, 4), { flag: 'wx' }, function (err) {
-    //     if (err) throw err;
-    //     console.log("It's saved!");
-    // });
+    try{
+      dataMain.units.sort(function(a, b) {
+        return a.folder.match(/\d+/)[0] - b.folder.match(/\d+/)[0];
+      });
+    } catch(e){
+      console.log(`CHAPTERS WERE NOT SORTED. CHECK MANUAL FOR PROPER NAMING.
+        Use names with digits to succesfuly sort chapter folders`);
+
+    }
+
+
     fs.writeFileSync(DB, JSON.stringify(dataMain, null, 4), { flag: 'w' });
 
 })();
