@@ -1,4 +1,4 @@
-import migrate from '../src/DB/makeMigrations'
+import {migrate, rollback} from '../src/DB/makeMigrations'
 import express from 'express';
 import knex from '../src/DB/knex';
 import serverRenderer from './middleware/renderer';
@@ -45,10 +45,11 @@ try{
     if (!exists) {
       migrate();
     } else {
-      console.log('Migration is not needed!');
+      rollback();
+      migrate();
+      console.log('Migration was rolled back!');
     }
   });
 } catch(e) {
   console.log(e);
-  console.log(process.env.DATABASE_URL);
 }
