@@ -12,7 +12,7 @@ const rollbackAndMigrate = async () => {
 const migrate = async () => {
   try {
     await knex.migrate.latest()
-    console.log('Migrated successfully');
+    console.log('Migrated successfully'); 
   } catch(e) {
     console.log('Migration failed:');
     console.log(e);
