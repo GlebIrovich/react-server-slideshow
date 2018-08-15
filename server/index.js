@@ -1,4 +1,4 @@
-import {migrate, rollback} from '../src/DB/makeMigrations'
+import {migrate, rollbackAndMigrate} from '../src/DB/makeMigrations'
 import express from 'express';
 import knex from '../src/DB/knex';
 import serverRenderer from './middleware/renderer';
@@ -40,16 +40,17 @@ app.listen(PORT, (error) => {
 
     console.log("listening on " + PORT + "...");
 });
-try{
-  knex.schema.hasTable('comments').then(function(exists) {
-    if (!exists) {
-      migrate();
-    } else {
-      rollback();
-      migrate();
-      console.log('Migration was rolled back!');
-    }
-  });
-} catch(e) {
-  console.log(e);
-}
+
+( ()=> {
+  try{
+    // knex.schema.hasTable('comments').then(function(exists) {
+    //   if (!exists) {
+    //     await migrate();
+    //   } else {
+    rollbackAndMigrate();
+    //   }
+    // });
+  } catch(e) {
+    console.log(e);
+  }
+})();
