@@ -52,20 +52,11 @@ export default class Carousel extends Component {
   }
   render(){
     return (
-      <React.Fragment>
+     
       <OwlCarousel id="carousel-b"
         ref="car" options={options}>
         {this.mapItems()}
       </OwlCarousel>
-      
-      <button onClick={() => this.refs.car.prev()}>
-					prev
-				</button>
-
-				<button onClick={() => this.refs.car.next()}>
-					next
-				</button>
-      </React.Fragment>
       
     )
   }
