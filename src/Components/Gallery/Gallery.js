@@ -10,13 +10,14 @@ export default class Gallery extends Component {
   }
   renderGallery(){
     //init generator
-    function* slideNum(){
-      let index = 1;
+    function* slideNum(start){
+      let index = start;
       while(true)
         yield index++;
     }
-    const gen = slideNum();
+    
     const unit = this.props.data[this.props.currentChapter]
+    const gen = slideNum(unit.subchaptersNumbers[0]);
     return unit.subchaptersTitles.map((title, index) => {
       return (
         <div key={index}>
