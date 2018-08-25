@@ -1,0 +1,198 @@
+{
+    "units": [
+        {
+            "folder": "unit1",
+            "unitPath": "unit1/",
+            "slides": [
+                "1.png",
+                "2.png",
+                "3.png",
+                "4.png",
+                "5.png",
+                "6.png",
+                "7.png",
+                "8.png",
+                "9.png",
+                "10.png",
+                "11.png"
+            ],
+            "slidesPaths": [
+                "unit1/1.png",
+                "unit1/2.png",
+                "unit1/3.png",
+                "unit1/4.png",
+                "unit1/5.png",
+                "unit1/6.png",
+                "unit1/7.png",
+                "unit1/8.png",
+                "unit1/9.png",
+                "unit1/10.png",
+                "unit1/11.png"
+            ],
+            "title": "Objectioni afferuntur excogitent",
+            "subchaptersTitles": [
+                "us subjectum",
+                "continere stabilire pro ",
+                "excogitent perficitu"
+            ],
+            "subchaptersNumbers": [
+                1,
+                5,
+                8
+            ],
+            "subchaptersSlides": [
+                [
+                    "unit1/1.png",
+                    "unit1/2.png",
+                    "unit1/3.png",
+                    "unit1/4.png"
+                ],
+                [
+                    "unit1/5.png",
+                    "unit1/6.png",
+                    "unit1/7.png"
+                ],
+                [
+                    "unit1/8.png",
+                    "unit1/9.png",
+                    "unit1/10.png",
+                    "unit1/11.png"
+                ]
+            ]
+        },
+        {
+            "folder": "unit2",
+            "unitPath": "unit2/",
+            "slides": [
+                "1.png",
+                "2.png",
+                "3.png",
+                "4.png",
+                "5.png",
+                "6.png",
+                "7.png",
+                "8.png",
+                "9.png",
+                "10.png",
+                "12.png",
+                "22.png"
+            ],
+            "slidesPaths": [
+                "unit2/1.png",
+                "unit2/2.png",
+                "unit2/3.png",
+                "unit2/4.png",
+                "unit2/5.png",
+                "unit2/6.png",
+                "unit2/7.png",
+                "unit2/8.png",
+                "unit2/9.png",
+                "unit2/10.png",
+                "unit2/12.png",
+                "unit2/22.png"
+            ],
+            "title": "Notatu sub vim nam juncta",
+            "subchaptersTitles": [
+                "pro tum somniorum?",
+                "me at re lente certe",
+                "Ei penitius imaginer si"
+            ],
+            "subchaptersNumbers": [
+                1,
+                5,
+                9
+            ],
+            "subchaptersSlides": [
+                [
+                    "unit2/1.png",
+                    "unit2/2.png",
+                    "unit2/3.png",
+                    "unit2/4.png"
+                ],
+                [
+                    "unit2/5.png",
+                    "unit2/6.png",
+                    "unit2/7.png",
+                    "unit2/8.png"
+                ],
+                [
+                    "unit2/9.png",
+                    "unit2/10.png",
+                    "unit2/12.png",
+                    "unit2/22.png"
+                ]
+            ]
+        },
+        {
+            "folder": "unit3",
+            "unitPath": "unit3/",
+            "slides": [
+                "1.png",
+                "2.png",
+                "3.png",
+                "4.png",
+                "5.png",
+                "6.png",
+                "7.png",
+                "8.png",
+                "9.png",
+                "10.png",
+                "11.png",
+                "12.png",
+                "13.png"
+            ],
+            "slidesPaths": [
+                "unit3/1.png",
+                "unit3/2.png",
+                "unit3/3.png",
+                "unit3/4.png",
+                "unit3/5.png",
+                "unit3/6.png",
+                "unit3/7.png",
+                "unit3/8.png",
+                "unit3/9.png",
+                "unit3/10.png",
+                "unit3/11.png",
+                "unit3/12.png",
+                "unit3/13.png"
+            ],
+            "title": "Aliud locus se illam",
+            "subchaptersTitles": [
+                "Delusisse clausulas",
+                "Necdum conari",
+                "Ei penitius imaginer si"
+            ],
+            "subchaptersNumbers": [
+                1,
+                5,
+                9
+            ],
+            "subchaptersSlides": [
+                [
+                    "unit3/1.png",
+                    "unit3/2.png",
+                    "unit3/3.png",
+                    "unit3/4.png"
+                ],
+                [
+                    "unit3/5.png",
+                    "unit3/6.png",
+                    "unit3/7.png",
+                    "unit3/8.png"
+                ],
+                [
+                    "unit3/9.png",
+                    "unit3/10.png",
+                    "unit3/11.png",
+                    "unit3/12.png",
+                    "unit3/13.png"
+                ]
+            ]
+        }
+    ],
+    "title": "Dummy set",
+    "contributors": "your names",
+    "description": "course description",
+    "color": "#041199",
+    "logo": "logo.png"
+}
