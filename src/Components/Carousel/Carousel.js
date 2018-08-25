@@ -44,23 +44,6 @@ export default class Carousel extends Component {
       )
     })
   }
-  componentWillMount() {
-    document.addEventListener('keydown', this.handleKeyDown);
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener('keydown', this.handleKeyDown);
-  }
-
-  handleKeyDown = (e) => {
-    if (e.key === 'ArrowRight') {
-      e.preventDefault();
-      this.refs.car.next()
-    } else if (e.key === 'ArrowLeft') {
-      e.preventDefault();
-      this.refs.car.prev()
-    }
-  }
 
   componentWillUpdate(){
     // hide owl controlls if not desktop
