@@ -50,13 +50,37 @@ export default class Carousel extends Component {
     options.nav = true
     if(!this.props.isDesktop) options.nav = false
   }
+  componentWillMount() {
+    try {
+      document.addEventListener('keydown', this.handleKeyDown);
+    } catch (e) {}
+    
+  }
+
+  componentWillUnmount() {
+    try {
+      document.removeEventListener('keydown', this.handleKeyDown);
+    } catch (e) {}
+    
+  }
+
+  handleKeyDown = (e) => {
+    if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      this.refs.car.next()
+    } else if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      this.refs.car.prev()
+    }
+  };
   render(){
     return (
-     
+
       <OwlCarousel id="carousel-b"
         ref="car" options={options}>
         {this.mapItems()}
       </OwlCarousel>
+
       
     )
   }
