@@ -1,4 +1,4 @@
-import {rollbackAndMigrate} from './DB/makeMigrations'
+const rollbackAndMigrate = require('./DB/makeMigrations')
 
 ( ()=> {
     try{
