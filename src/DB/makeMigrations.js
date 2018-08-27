@@ -32,4 +32,4 @@ const migrate = async () => {
     // })
 }
 
-module.exports = {migrate, rollbackAndMigrate};
+module.exports = rollbackAndMigrate;

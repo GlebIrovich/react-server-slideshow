@@ -1,6 +1,6 @@
-const rollbackAndMigrate = require('./DB/makeMigrations')
+const rollbackAndMigrate = require('./DB/makeMigrations');
 
-( ()=> {
+(()=> {
     try{
       rollbackAndMigrate();
 
