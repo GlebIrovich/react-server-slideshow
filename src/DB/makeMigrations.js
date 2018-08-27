@@ -3,7 +3,7 @@ const rollbackAndMigrate = async () => {
   try {
     await knex.migrate.rollback()
     console.log('Rollback successfully');
-    await migrate();
+    migrate();
   } catch(e) {
     console.log('Rollback failed:');
     console.log(e);
@@ -17,19 +17,6 @@ const migrate = async () => {
     console.log('Migration failed:');
     console.log(e);
   }
-
-    // .then(()=>{
-    //   console.log('Migrated successfully');
-    // })
-    // .finally(function () {
-    //   console.log('Done!');
-    //     return knex.destroy();
-    // })
-    // .catch((e)=> {
-    //   console.log(knex);
-    //   console.log('Migration failed:');
-    //   console.log(e);
-    // })
 }
 
 module.exports = rollbackAndMigrate;
