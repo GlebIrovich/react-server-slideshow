@@ -1,4 +1,5 @@
 import express from 'express';
+import { log } from 'util';
 const csv = require('express-csv');
 const router = express.Router();
 const knex = require('../src/DB/knex');
@@ -44,6 +45,14 @@ router.get('/report', async (req, res) => {
   const data = await knex('comments')
     .select('*')
   data.unshift(columns)
+  for(let record of data){
+    try {
+      record.slide++
+    } catch (e) {
+
+    }
+    
+  }
   res.setHeader('Content-disposition', 'attachment; filename=report.csv');
   res.set('Content-Type', 'text/csv');
   res.status(200).csv(data).send();
