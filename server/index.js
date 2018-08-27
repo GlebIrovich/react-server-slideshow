@@ -3,6 +3,7 @@ import express from 'express';
 import knex from '../src/DB/knex';
 import serverRenderer from './middleware/renderer';
 import apiRouter from './apiRouter';
+
 const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 3000;
 const path = require('path');
@@ -43,17 +44,3 @@ app.listen(PORT, (error) => {
 
     console.log("listening on " + PORT + "...");
 });
-
-( ()=> {
-  try{
-    // knex.schema.hasTable('comments').then(function(exists) {
-    //   if (!exists) {
-    //     await migrate();
-    //   } else {
-    rollbackAndMigrate();
-    //   }
-    // });
-  } catch(e) {
-    console.log(e);
-  }
-})();
