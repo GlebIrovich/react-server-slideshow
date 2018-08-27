@@ -1,3 +1,5 @@
+import {rollbackAndMigrate} from './DB/makeMigrations'
+
 ( ()=> {
     try{
       rollbackAndMigrate();

@@ -1,4 +1,3 @@
-import {migrate, rollbackAndMigrate} from '../src/DB/makeMigrations'
 import express from 'express';
 import knex from '../src/DB/knex';
 import serverRenderer from './middleware/renderer';
