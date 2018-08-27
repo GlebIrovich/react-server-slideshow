@@ -121,7 +121,7 @@ class App extends Component {
     if(Object.keys(props.match.params).length === 0) return {currentChapter: 0, slide: slide}
     // do nothing if input if > then length of data
     const chapter = parseInt(props.match.params.chapter, 10)
-    if(chapter >= state.data.units.length) return state;
+    if(chapter >= state.data.units.length || !Number.isInteger(chapter)) return state;
     return {
       currentChapter: chapter,
       slide: slide

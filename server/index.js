@@ -32,6 +32,9 @@ router.get('/:chapter', serverRenderer);
 // tell the app to use the above rules
 app.use(router);
 app.use('/api', apiRouter);
+app.get('*', (req, res)=> {
+  res.redirect('/')
+})
 // start the app
 app.listen(PORT, (error) => {
     if (error) {
