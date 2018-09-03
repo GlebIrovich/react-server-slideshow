@@ -5,7 +5,7 @@ exports.up = function(knex, Promise) {
     t.integer('slide');
     t.integer('chapter');
     t.string('author');
-    t.string('text');
+    t.text('text');
     t.string('tag');
     t.timestamp('date').defaultTo(knex.fn.now());
   })
